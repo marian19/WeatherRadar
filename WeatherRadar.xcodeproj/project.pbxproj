@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021774F6D7A76528DB9378E0 /* libPods-WeatherRadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CFA5E9F17F19EFB3A19031 /* libPods-WeatherRadarTests.a */; };
 		5682D3FC21428F88000BAA5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D3FB21428F88000BAA5D /* AppDelegate.m */; };
 		5682D3FF21428F88000BAA5D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D3FE21428F88000BAA5D /* ViewController.m */; };
 		5682D40521428F88000BAA5D /* WeatherRadar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5682D40321428F88000BAA5D /* WeatherRadar.xcdatamodeld */; };
@@ -14,6 +15,7 @@
 		5682D40A21428F8A000BAA5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5682D40821428F8A000BAA5D /* LaunchScreen.storyboard */; };
 		5682D40D21428F8A000BAA5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D40C21428F8A000BAA5D /* main.m */; };
 		5682D41721428F8A000BAA5D /* WeatherRadarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D41621428F8A000BAA5D /* WeatherRadarTests.m */; };
+		C5339A5EC44468F3AAC91111 /* libPods-WeatherRadar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC527D9F1E5D67A918089184 /* libPods-WeatherRadar.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,12 @@
 		5682D41221428F8A000BAA5D /* WeatherRadarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherRadarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5682D41621428F8A000BAA5D /* WeatherRadarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherRadarTests.m; sourceTree = "<group>"; };
 		5682D41821428F8A000BAA5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B0D05780F6D4B99762076C6 /* Pods-WeatherRadarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherRadarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherRadarTests/Pods-WeatherRadarTests.release.xcconfig"; sourceTree = "<group>"; };
+		88CFA5E9F17F19EFB3A19031 /* libPods-WeatherRadarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherRadarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9FE6207304B4EAE430565C1 /* Pods-WeatherRadarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherRadarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherRadarTests/Pods-WeatherRadarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC527D9F1E5D67A918089184 /* libPods-WeatherRadar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherRadar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB24527CAC0046235A771F61 /* Pods-WeatherRadar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherRadar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherRadar/Pods-WeatherRadar.debug.xcconfig"; sourceTree = "<group>"; };
+		F4671B12DF445A73B37ACFED /* Pods-WeatherRadar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherRadar.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherRadar/Pods-WeatherRadar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5339A5EC44468F3AAC91111 /* libPods-WeatherRadar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +63,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021774F6D7A76528DB9378E0 /* libPods-WeatherRadarTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DB5A6E1C44836936FCDA83A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB24527CAC0046235A771F61 /* Pods-WeatherRadar.debug.xcconfig */,
+				F4671B12DF445A73B37ACFED /* Pods-WeatherRadar.release.xcconfig */,
+				B9FE6207304B4EAE430565C1 /* Pods-WeatherRadarTests.debug.xcconfig */,
+				5B0D05780F6D4B99762076C6 /* Pods-WeatherRadarTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		35F7485A8CFB6BD435AD1937 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC527D9F1E5D67A918089184 /* libPods-WeatherRadar.a */,
+				88CFA5E9F17F19EFB3A19031 /* libPods-WeatherRadarTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5682D3EE21428F88000BAA5D = {
 			isa = PBXGroup;
 			children = (
 				5682D3F921428F88000BAA5D /* WeatherRadar */,
 				5682D41521428F8A000BAA5D /* WeatherRadarTests */,
 				5682D3F821428F88000BAA5D /* Products */,
+				2DB5A6E1C44836936FCDA83A /* Pods */,
+				35F7485A8CFB6BD435AD1937 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5682D41B21428F8A000BAA5D /* Build configuration list for PBXNativeTarget "WeatherRadar" */;
 			buildPhases = (
+				F4595BA521D24B10B6D1351F /* [CP] Check Pods Manifest.lock */,
 				5682D3F321428F88000BAA5D /* Sources */,
 				5682D3F421428F88000BAA5D /* Frameworks */,
 				5682D3F521428F88000BAA5D /* Resources */,
+				C487E392FCE78CD36F7025B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,6 +161,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5682D41E21428F8A000BAA5D /* Build configuration list for PBXNativeTarget "WeatherRadarTests" */;
 			buildPhases = (
+				CFA0993A85343C0ACCAC05DB /* [CP] Check Pods Manifest.lock */,
 				5682D40E21428F8A000BAA5D /* Sources */,
 				5682D40F21428F8A000BAA5D /* Frameworks */,
 				5682D41021428F8A000BAA5D /* Resources */,
@@ -196,6 +231,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C487E392FCE78CD36F7025B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeatherRadar/Pods-WeatherRadar-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherRadar/Pods-WeatherRadar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFA0993A85343C0ACCAC05DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeatherRadarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4595BA521D24B10B6D1351F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeatherRadar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5682D3F321428F88000BAA5D /* Sources */ = {
@@ -351,6 +443,7 @@
 		};
 		5682D41C21428F8A000BAA5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB24527CAC0046235A771F61 /* Pods-WeatherRadar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -368,6 +461,7 @@
 		};
 		5682D41D21428F8A000BAA5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4671B12DF445A73B37ACFED /* Pods-WeatherRadar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -385,6 +479,7 @@
 		};
 		5682D41F21428F8A000BAA5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9FE6207304B4EAE430565C1 /* Pods-WeatherRadarTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -404,6 +499,7 @@
 		};
 		5682D42021428F8A000BAA5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B0D05780F6D4B99762076C6 /* Pods-WeatherRadarTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
