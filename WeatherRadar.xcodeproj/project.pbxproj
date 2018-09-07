@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		021774F6D7A76528DB9378E0 /* libPods-WeatherRadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CFA5E9F17F19EFB3A19031 /* libPods-WeatherRadarTests.a */; };
 		5682D3FC21428F88000BAA5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D3FB21428F88000BAA5D /* AppDelegate.m */; };
-		5682D3FF21428F88000BAA5D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D3FE21428F88000BAA5D /* ViewController.m */; };
 		5682D40521428F88000BAA5D /* WeatherRadar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5682D40321428F88000BAA5D /* WeatherRadar.xcdatamodeld */; };
 		5682D40721428F8A000BAA5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5682D40621428F8A000BAA5D /* Assets.xcassets */; };
 		5682D40A21428F8A000BAA5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5682D40821428F8A000BAA5D /* LaunchScreen.storyboard */; };
 		5682D40D21428F8A000BAA5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D40C21428F8A000BAA5D /* main.m */; };
 		5682D41721428F8A000BAA5D /* WeatherRadarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D41621428F8A000BAA5D /* WeatherRadarTests.m */; };
+		5682D42C2142962A000BAA5D /* CitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D42B2142962A000BAA5D /* CitiesTableViewController.m */; };
+		5682D42F21430916000BAA5D /* WeatherDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D42E21430916000BAA5D /* WeatherDetailsViewController.m */; };
 		C5339A5EC44468F3AAC91111 /* libPods-WeatherRadar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC527D9F1E5D67A918089184 /* libPods-WeatherRadar.a */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +33,6 @@
 		5682D3F721428F88000BAA5D /* WeatherRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5682D3FA21428F88000BAA5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5682D3FB21428F88000BAA5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5682D3FD21428F88000BAA5D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5682D3FE21428F88000BAA5D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5682D40421428F88000BAA5D /* WeatherRadar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherRadar.xcdatamodel; sourceTree = "<group>"; };
 		5682D40621428F8A000BAA5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5682D40921428F8A000BAA5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +41,10 @@
 		5682D41221428F8A000BAA5D /* WeatherRadarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherRadarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5682D41621428F8A000BAA5D /* WeatherRadarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherRadarTests.m; sourceTree = "<group>"; };
 		5682D41821428F8A000BAA5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5682D42A2142962A000BAA5D /* CitiesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesTableViewController.h; sourceTree = "<group>"; };
+		5682D42B2142962A000BAA5D /* CitiesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesTableViewController.m; sourceTree = "<group>"; };
+		5682D42D21430916000BAA5D /* WeatherDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDetailsViewController.h; sourceTree = "<group>"; };
+		5682D42E21430916000BAA5D /* WeatherDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailsViewController.m; sourceTree = "<group>"; };
 		5B0D05780F6D4B99762076C6 /* Pods-WeatherRadarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherRadarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherRadarTests/Pods-WeatherRadarTests.release.xcconfig"; sourceTree = "<group>"; };
 		88CFA5E9F17F19EFB3A19031 /* libPods-WeatherRadarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherRadarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FE6207304B4EAE430565C1 /* Pods-WeatherRadarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherRadarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherRadarTests/Pods-WeatherRadarTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,12 +118,9 @@
 			children = (
 				5682D3FA21428F88000BAA5D /* AppDelegate.h */,
 				5682D3FB21428F88000BAA5D /* AppDelegate.m */,
-				5682D3FD21428F88000BAA5D /* ViewController.h */,
-				5682D3FE21428F88000BAA5D /* ViewController.m */,
-				5682D40621428F8A000BAA5D /* Assets.xcassets */,
-				5682D40821428F8A000BAA5D /* LaunchScreen.storyboard */,
-				5682D40B21428F8A000BAA5D /* Info.plist */,
-				5682D40C21428F8A000BAA5D /* main.m */,
+				5682D423214294A8000BAA5D /* PresentationLayer */,
+				5682D424214294B4000BAA5D /* DataLayer */,
+				5682D42121429476000BAA5D /* supporting files */,
 				5682D40321428F88000BAA5D /* WeatherRadar.xcdatamodeld */,
 			);
 			path = WeatherRadar;
@@ -133,6 +133,75 @@
 				5682D41821428F8A000BAA5D /* Info.plist */,
 			);
 			path = WeatherRadarTests;
+			sourceTree = "<group>";
+		};
+		5682D42121429476000BAA5D /* supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				5682D40621428F8A000BAA5D /* Assets.xcassets */,
+				5682D40821428F8A000BAA5D /* LaunchScreen.storyboard */,
+				5682D40B21428F8A000BAA5D /* Info.plist */,
+				5682D40C21428F8A000BAA5D /* main.m */,
+			);
+			name = "supporting files";
+			sourceTree = "<group>";
+		};
+		5682D423214294A8000BAA5D /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5682D4252142951C000BAA5D /* CitiesTableView */,
+				5682D4262142956E000BAA5D /* CityWeatherDetails */,
+				5682D42721429581000BAA5D /* CityWeatherHistory */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		5682D424214294B4000BAA5D /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5682D429214295C5000BAA5D /* RemoteDataSource */,
+				5682D428214295BB000BAA5D /* LocalDataSource */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		5682D4252142951C000BAA5D /* CitiesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				5682D42A2142962A000BAA5D /* CitiesTableViewController.h */,
+				5682D42B2142962A000BAA5D /* CitiesTableViewController.m */,
+			);
+			path = CitiesTableView;
+			sourceTree = "<group>";
+		};
+		5682D4262142956E000BAA5D /* CityWeatherDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5682D42D21430916000BAA5D /* WeatherDetailsViewController.h */,
+				5682D42E21430916000BAA5D /* WeatherDetailsViewController.m */,
+			);
+			path = CityWeatherDetails;
+			sourceTree = "<group>";
+		};
+		5682D42721429581000BAA5D /* CityWeatherHistory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CityWeatherHistory;
+			sourceTree = "<group>";
+		};
+		5682D428214295BB000BAA5D /* LocalDataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalDataSource;
+			sourceTree = "<group>";
+		};
+		5682D429214295C5000BAA5D /* RemoteDataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteDataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,9 +363,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5682D42F21430916000BAA5D /* WeatherDetailsViewController.m in Sources */,
 				5682D40521428F88000BAA5D /* WeatherRadar.xcdatamodeld in Sources */,
-				5682D3FF21428F88000BAA5D /* ViewController.m in Sources */,
 				5682D40D21428F8A000BAA5D /* main.m in Sources */,
+				5682D42C2142962A000BAA5D /* CitiesTableViewController.m in Sources */,
 				5682D3FC21428F88000BAA5D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

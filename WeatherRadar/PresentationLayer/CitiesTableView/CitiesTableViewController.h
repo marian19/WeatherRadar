@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CitiesTableViewController.h
 //  WeatherRadar
 //
 //  Created by Marian on 9/7/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CitiesTableViewController : UITableViewController
 
 @end
-
