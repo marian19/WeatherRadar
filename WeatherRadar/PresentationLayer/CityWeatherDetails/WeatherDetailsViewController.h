@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface WeatherDetailsViewController : UIViewController
+@interface WeatherDetailsViewController : BaseViewController
 
 @end

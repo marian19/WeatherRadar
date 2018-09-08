@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
+#import "City.h"
 
-@interface CitiesTableViewController : UITableViewController
+@protocol CitiesViewProtocol <NSObject>
+-(void)showCities:(NSArray<City*>*) cities;
+@end
+
+@interface CitiesTableViewController : BaseViewController <CitiesViewProtocol>
 
 @end

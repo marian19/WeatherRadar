@@ -9,17 +9,61 @@
 #import "CitiesTableViewController.h"
 #import "WeatherRemoteDataSource.h"
 
-@interface CitiesTableViewController ()
+@interface CitiesTableViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) UITableView *tableView;
 
 @end
 
 @implementation CitiesTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)setupTableView {
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
 }
 
+- (void)setupNavigationBarAddButton {
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self  action:@selector(addCity:)];
+    
+    self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)setupUI {
+    [self setupTableView];
+    [self setupNavigationBarAddButton];
+}
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    [self setupUI];
+}
+
+-(IBAction)addCity:(id)sender{
+    
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"City" message: @"Please enter city name" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.placeholder = @"City";
+        textField.textColor = [UIColor blueColor];
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+    }];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSArray * textfields = alertController.textFields;
+        UITextField * cityNamefield = textfields[0];
+        NSLog(@"%@",cityNamefield.text);
+        
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -57,7 +101,7 @@
  [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
  } else if (editingStyle == UITableViewCellEditingStyleInsert) {
  // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }   
+ }
  }
  */
 
