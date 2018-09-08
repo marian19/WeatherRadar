@@ -10,5 +10,8 @@
 
 @interface AFNetworkingClient : NSObject
 + (instancetype)sharedInstance;
+
 - (void) GET:(NSString*)URLString withParameters:(NSDictionary*)parameter completion:(void (^)(id _Nullable, NSError * _Nonnull))completion;
+
+- (void) downloadImage:(NSString*)URLString completion:(void (^)(id _Nullable, NSError * _Nullable))completion;
 @end
