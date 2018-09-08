@@ -9,6 +9,8 @@
 #import "AFNetworkingClient.h"
 #import "AFNetworking.h"
 #import "AFImageDownloader.h"
+#import "Constaints.h"
+
 @implementation AFNetworkingClient
 
 + (instancetype)sharedInstance{
@@ -29,17 +31,21 @@
 
 - (void) GET:(NSString*)URLString withParameters:(NSDictionary*)parameter completion:(void (^)(id _Nullable, NSError * _Nullable))completion{
     
+    NSString* fullURLString = [NSString stringWithFormat:kBaseURL,URLString];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:URLString parameters:parameter progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    
+    [manager GET:fullURLString parameters:parameter progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         completion(responseObject, nil);
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         completion(nil, error);
     }];
 }
 
-- (void) downloadImage:(NSString*)URLString completion:(void (^)(id  _Nullable, NSError * _Nullable))completion{
+- (void) downloadImage:(NSString*)icon completion:(void (^)(id  _Nullable, NSError * _Nullable))completion{
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: URLString]];
+    NSString* fullURLString = [NSString stringWithFormat:kIconsBaseURL,icon];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: fullURLString]];
     
     [[AFImageDownloader defaultInstance] downloadImageForURLRequest:request success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull responseObject) {
         completion(responseObject, nil);
