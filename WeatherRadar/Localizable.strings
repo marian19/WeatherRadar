@@ -9,3 +9,5 @@
 "CityAdded" = "City is added successfully";
 "OK" = "OK";
 "CityIsExist" = "City is already exist";
+"ErrorMessage" = "Somthing went wrong, please try again";
+"WeatherSaved" = "Weather is saved successfully";

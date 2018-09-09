@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "Toast.h"
+
 @interface BaseViewController ()
 
 @end
@@ -25,7 +25,11 @@
 }
 
 -(void) showToastwith:(NSString*) text{
-    [self.view makeToast:text];
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: nil message: NSLocalizedString(text,nil) preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleCancel handler:nil]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

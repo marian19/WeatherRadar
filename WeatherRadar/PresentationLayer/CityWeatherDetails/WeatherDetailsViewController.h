@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "Weather.h"
 
-@interface WeatherDetailsViewController : BaseViewController
+@protocol WeatherDetailsViewProtocol <NSObject>
+-(void)showWeatherDetails:(Weather*) weatherDetails;
+-(void)showAlertWithText:(NSString*) text;
+@end
+
+@interface WeatherDetailsViewController : BaseViewController<WeatherDetailsViewProtocol>
+@property (strong, nonatomic) NSString *cityName;
 
 @end

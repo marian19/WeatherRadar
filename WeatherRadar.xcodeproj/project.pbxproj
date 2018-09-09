@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		021774F6D7A76528DB9378E0 /* libPods-WeatherRadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CFA5E9F17F19EFB3A19031 /* libPods-WeatherRadarTests.a */; };
+		5614CE6A2145BA7A00119E4D /* WeatherDetailsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5614CE692145BA7A00119E4D /* WeatherDetailsPresenter.m */; };
+		5614CE6E2145C5B300119E4D /* NSDate+ManipulateDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5614CE6D2145C5B300119E4D /* NSDate+ManipulateDate.m */; };
 		5682D3FC21428F88000BAA5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D3FB21428F88000BAA5D /* AppDelegate.m */; };
 		5682D40521428F88000BAA5D /* WeatherRadar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5682D40321428F88000BAA5D /* WeatherRadar.xcdatamodeld */; };
 		5682D40721428F8A000BAA5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5682D40621428F8A000BAA5D /* Assets.xcassets */; };
@@ -43,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5614CE682145BA7A00119E4D /* WeatherDetailsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDetailsPresenter.h; sourceTree = "<group>"; };
+		5614CE692145BA7A00119E4D /* WeatherDetailsPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailsPresenter.m; sourceTree = "<group>"; };
+		5614CE6C2145C5B300119E4D /* NSDate+ManipulateDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+ManipulateDate.h"; sourceTree = "<group>"; };
+		5614CE6D2145C5B300119E4D /* NSDate+ManipulateDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ManipulateDate.m"; sourceTree = "<group>"; };
 		5682D3F721428F88000BAA5D /* WeatherRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5682D3FA21428F88000BAA5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5682D3FB21428F88000BAA5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -131,6 +137,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5614CE6B2145C4B100119E4D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5614CE6C2145C5B300119E4D /* NSDate+ManipulateDate.h */,
+				5614CE6D2145C5B300119E4D /* NSDate+ManipulateDate.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		5682D3EE21428F88000BAA5D = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +204,7 @@
 		5682D423214294A8000BAA5D /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				5614CE6B2145C4B100119E4D /* Categories */,
 				56C0D9BD2144742E0085B709 /* BasePresenter.h */,
 				56C0D9BE2144742E0085B709 /* BasePresenter.m */,
 				56C0D9C0214474460085B709 /* BaseViewController.h */,
@@ -225,6 +241,8 @@
 			children = (
 				5682D42D21430916000BAA5D /* WeatherDetailsViewController.h */,
 				5682D42E21430916000BAA5D /* WeatherDetailsViewController.m */,
+				5614CE682145BA7A00119E4D /* WeatherDetailsPresenter.h */,
+				5614CE692145BA7A00119E4D /* WeatherDetailsPresenter.m */,
 			);
 			path = CityWeatherDetails;
 			sourceTree = "<group>";
@@ -465,6 +483,8 @@
 				56C0D9BB21445DD50085B709 /* WeatherInfo+CoreDataProperties.m in Sources */,
 				5682D433214332C7000BAA5D /* AFNetworkingClient.m in Sources */,
 				56C0D9C5214477850085B709 /* CitiesPresenter.m in Sources */,
+				5614CE6A2145BA7A00119E4D /* WeatherDetailsPresenter.m in Sources */,
+				5614CE6E2145C5B300119E4D /* NSDate+ManipulateDate.m in Sources */,
 				56C0D99C2143F5900085B709 /* Weather.m in Sources */,
 				56C0D99F214446280085B709 /* WeatherRemoteDataSource.m in Sources */,
 				5682D40521428F88000BAA5D /* WeatherRadar.xcdatamodeld in Sources */,

@@ -6,7 +6,6 @@ target 'WeatherRadar' do
     pod 'AFNetworking', '~> 3.0'
     pod 'SVProgressHUD'
     pod 'DZNEmptyDataSet'
-    pod 'Toast'
     target 'WeatherRadarTests' do
         inherit! :search_paths
         # Pods for testing

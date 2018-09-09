@@ -8,7 +8,7 @@
 
 #import "CitiesPresenter.h"
 #import "City.h"
-
+#import "SVProgressHUD.h"
 @implementation CitiesPresenter
 
 - (id)initWithView:(id < CitiesViewProtocol> ) view {
@@ -24,24 +24,28 @@
 }
 
 - (void)getCities {
+    [SVProgressHUD show];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
         NSArray<City*> * cities = [City getAllUserCities];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
             [self.view showCities:cities];
         });
     });
 }
 
 -(void) addCity:(NSString*) cityName{
-    
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-       BOOL isCityExist = [City addCity:cityName];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (isCityExist) {
-                [self.view showAlertWithText:@"CityIsExist"];
-            }else{
-                [self.view showAlertWithText:@"CityAdded"];
+    [SVProgressHUD show];
 
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        BOOL isNewCity = [City addCity:cityName];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+
+            if (isNewCity) {
+                [self.view showAlertWithText:@"CityAdded"];
+            }else{
+                [self.view showAlertWithText:@"CityIsExist"];
             }
         });
     });

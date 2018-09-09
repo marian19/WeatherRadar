@@ -26,11 +26,15 @@ AFNetworkingClient *httpClient;
     
     NSString *urlString  = [NSString stringWithFormat:kCityWeather, cityName];
     [httpClient GET: urlString withParameters:nil completion:^(id _Nullable response, NSError * _Nonnull error) {
-        
-        NSDictionary *responseDict = response;
-        Weather *weather = [[Weather alloc] initWithNSDictionary:responseDict];
-        
-        completion(weather,nil);
+        if (error == nil) {
+            NSDictionary *responseDict = response;
+            Weather *weather = [[Weather alloc] initWithNSDictionary:responseDict];
+            
+            completion(weather,nil);
+        }else{
+            completion(nil,error);
+
+        }
     }];
 }
 @end
