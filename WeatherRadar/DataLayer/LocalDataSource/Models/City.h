@@ -15,6 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface City : NSManagedObject
 
++ (BOOL)addCity:(NSString *)cityName;
++(City*) getCityWithName:(NSString *)cityName;
++(void)deleteCity:(City *)city;
++(NSArray<City *>*) getAllUserCities;
+
 @end
 
 NS_ASSUME_NONNULL_END

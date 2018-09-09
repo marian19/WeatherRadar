@@ -42,7 +42,7 @@
     NSFetchRequest *fetchRequest = [City fetchRequest];
     NSError *error = nil;
     [fetchRequest setPredicate:predicate];
-    NSArray *results = [managedObjectContext executeFetchRequest:[City fetchRequest] error:&error];
+    NSArray *results = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
     if (results.firstObject != nil) {
         fetchedCity = results.firstObject;
     }
@@ -50,7 +50,7 @@
     
 }
 
--(void)deleteCity:(City *)city{
++(void)deleteCity:(City *)city{
     NSManagedObjectContext *managedObjectContext = CoreDataManager.sharedInstance.managedObjectContext;
     
     [managedObjectContext deleteObject:city];
@@ -59,4 +59,14 @@
     [managedObjectContext save:&error];
 }
 
++(NSArray<City *>*) getAllUserCities{
+    
+    NSManagedObjectContext *managedObjectContext = CoreDataManager.sharedInstance.managedObjectContext;
+    NSError *error = nil;
+    NSArray *results = [managedObjectContext executeFetchRequest:[City fetchRequest] error:&error];
+
+    return results;
+    
+    
+}
 @end

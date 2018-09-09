@@ -17,6 +17,7 @@
 		5682D42C2142962A000BAA5D /* CitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D42B2142962A000BAA5D /* CitiesTableViewController.m */; };
 		5682D42F21430916000BAA5D /* WeatherDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D42E21430916000BAA5D /* WeatherDetailsViewController.m */; };
 		5682D433214332C7000BAA5D /* AFNetworkingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D432214332C7000BAA5D /* AFNetworkingClient.m */; };
+		569A5BF72145168A00DCCFB2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 569A5BF62145168A00DCCFB2 /* Localizable.strings */; };
 		56C0D9972143D7C30085B709 /* AFNetworkingClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D9962143D7C30085B709 /* AFNetworkingClientTests.m */; };
 		56C0D99C2143F5900085B709 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D99B2143F5900085B709 /* Weather.m */; };
 		56C0D99F214446280085B709 /* WeatherRemoteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D99E214446280085B709 /* WeatherRemoteDataSource.m */; };
@@ -59,6 +60,7 @@
 		5682D42E21430916000BAA5D /* WeatherDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailsViewController.m; sourceTree = "<group>"; };
 		5682D431214332C7000BAA5D /* AFNetworkingClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworkingClient.h; sourceTree = "<group>"; };
 		5682D432214332C7000BAA5D /* AFNetworkingClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingClient.m; sourceTree = "<group>"; };
+		569A5BF62145168A00DCCFB2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		56C0D9962143D7C30085B709 /* AFNetworkingClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingClientTests.m; sourceTree = "<group>"; };
 		56C0D9982143E5BA0085B709 /* Constaints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constaints.h; sourceTree = "<group>"; };
 		56C0D99A2143F5900085B709 /* Weather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				5682D40821428F8A000BAA5D /* LaunchScreen.storyboard */,
 				5682D40B21428F8A000BAA5D /* Info.plist */,
 				5682D40C21428F8A000BAA5D /* main.m */,
+				569A5BF62145168A00DCCFB2 /* Localizable.strings */,
 			);
 			name = "supporting files";
 			sourceTree = "<group>";
@@ -192,7 +195,7 @@
 				56C0D9C1214474460085B709 /* BaseViewController.m */,
 				5682D4252142951C000BAA5D /* CitiesTableView */,
 				5682D4262142956E000BAA5D /* CityWeatherDetails */,
-				5682D42721429581000BAA5D /* CityWeatherHistory */,
+				569A5BF42145052A00DCCFB2 /* CityWeatherHistory */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -226,13 +229,6 @@
 			path = CityWeatherDetails;
 			sourceTree = "<group>";
 		};
-		5682D42721429581000BAA5D /* CityWeatherHistory */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CityWeatherHistory;
-			sourceTree = "<group>";
-		};
 		5682D428214295BB000BAA5D /* LocalDataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +257,13 @@
 				5682D432214332C7000BAA5D /* AFNetworkingClient.m */,
 			);
 			path = HttpClient;
+			sourceTree = "<group>";
+		};
+		569A5BF42145052A00DCCFB2 /* CityWeatherHistory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CityWeatherHistory;
 			sourceTree = "<group>";
 		};
 		56C0D9992143F5740085B709 /* Models */ = {
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5682D40A21428F8A000BAA5D /* LaunchScreen.storyboard in Resources */,
+				569A5BF72145168A00DCCFB2 /* Localizable.strings in Resources */,
 				5682D40721428F8A000BAA5D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

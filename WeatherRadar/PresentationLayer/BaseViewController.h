@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
--(void) showAlertwith:(NSString*) text;
+-(void) showToastwith:(NSString*) text;
 @end

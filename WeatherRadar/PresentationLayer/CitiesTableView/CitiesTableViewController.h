@@ -12,6 +12,7 @@
 
 @protocol CitiesViewProtocol <NSObject>
 -(void)showCities:(NSArray<City*>*) cities;
+-(void)showAlertWithText:(NSString*) text;
 @end
 
 @interface CitiesTableViewController : BaseViewController <CitiesViewProtocol>

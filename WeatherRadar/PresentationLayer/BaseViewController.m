@@ -24,7 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) showAlertwith:(NSString*) text{
+-(void) showToastwith:(NSString*) text{
     [self.view makeToast:text];
 }
 
