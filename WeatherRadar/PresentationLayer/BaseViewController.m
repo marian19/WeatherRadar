@@ -24,7 +24,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) showToastwith:(NSString*) text{
+-(void)showAlertWithMessage: (NSString*)text{
+    
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle: nil message: NSLocalizedString(text,nil) preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleCancel handler:nil]];

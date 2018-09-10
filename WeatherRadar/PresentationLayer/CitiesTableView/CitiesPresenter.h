@@ -12,13 +12,14 @@
 
 @protocol CitiesPresenterProtocol <NSObject>
 
--(void) getCities;
--(void) deleteCity:(City*) city;
--(void) addCity:(NSString*) cityName;
+-(void)getCities;
+-(void)deleteCity:(City*) city;
+-(void)addCity:(NSString*) cityName;
 
 @end
 
 @interface CitiesPresenter : BasePresenter<CitiesPresenterProtocol>
+
 - (id)initWithView:(id < CitiesViewProtocol> ) view;
 @property (weak, nonatomic) id <CitiesViewProtocol> view;
 

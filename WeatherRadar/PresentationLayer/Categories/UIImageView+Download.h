@@ -10,4 +10,6 @@
 
 @interface UIImageView (Download)
 
+-(void)setImageFromIcon:(NSString*)icon;
+
 @end

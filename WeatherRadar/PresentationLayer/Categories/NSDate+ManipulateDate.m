@@ -13,7 +13,7 @@
 -(NSString *)convertToString{
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"dd.MM.yyyy - hh:mm"];
+    [dateFormatter setDateFormat:@"dd.MM.yyyy - HH:mm"];
     return  [dateFormatter stringFromDate:self];
 }
 @end

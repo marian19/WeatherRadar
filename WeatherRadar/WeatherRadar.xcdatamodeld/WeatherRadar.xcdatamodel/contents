@@ -2,12 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="City" representedClassName="City" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="weatherHistory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeatherInfo" inverseName="city" inverseEntity="WeatherInfo" syncable="YES"/>
+        <relationship name="weatherHistory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeatherInfo" inverseName="city" inverseEntity="WeatherInfo" syncable="YES"/>
     </entity>
     <entity name="WeatherInfo" representedClassName="WeatherInfo" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="humidity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="icon" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="temp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="weatherDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="windSpeed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>

@@ -9,14 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 #import "City.h"
+#import "WeatherInfo.h"
 
-@protocol CitiesViewProtocol <NSObject>
+@protocol CityHistoryViewProtocol <NSObject>
 
--(void)showCities:(NSArray<City*>*) cities;
+-(void)showCityHistory:(NSArray<WeatherInfo*>*) weatherInfoArray;
 -(void)showAlertWithText:(NSString*) text;
 
 @end
 
-@interface CitiesTableViewController : BaseViewController <CitiesViewProtocol>
+@interface CityHistoryTableViewController : BaseViewController <CityHistoryViewProtocol>
+
+@property (strong, nonatomic) City* city ;
 
 @end

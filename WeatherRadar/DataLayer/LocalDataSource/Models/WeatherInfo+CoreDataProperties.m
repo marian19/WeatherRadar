@@ -11,7 +11,7 @@
 @implementation WeatherInfo (CoreDataProperties)
 
 + (NSFetchRequest<WeatherInfo *> *)fetchRequest {
-	return [NSFetchRequest fetchRequestWithEntityName:@"Weather"];
+	return [NSFetchRequest fetchRequestWithEntityName:@"WeatherInfo"];
 }
 
 @dynamic temp;

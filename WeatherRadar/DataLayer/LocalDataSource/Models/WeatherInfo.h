@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "Weather.h"
-@class City;
 
+@class City;
+@class Weather;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WeatherInfo : NSManagedObject
-+ (instancetype)addCityWeatherInfo:(Weather *)weather icon:(NSData*) imageData;
++ (instancetype)addCityWeatherInfo: (Weather*)weather toCity:(City*)city;
+
++(NSArray<WeatherInfo *>*) getCityHistory:(City *)city;
 @end
 
 NS_ASSUME_NONNULL_END

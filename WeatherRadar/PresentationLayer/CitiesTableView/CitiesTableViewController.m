@@ -11,6 +11,7 @@
 #import "UIScrollView+EmptyDataSet.h"
 #import "CitiesPresenter.h"
 #import "WeatherDetailsViewController.h"
+#import "CityHistoryTableViewController.h"
 
 @interface CitiesTableViewController ()<UITableViewDataSource, UITableViewDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
@@ -22,30 +23,6 @@
 
 @implementation CitiesTableViewController
 
-- (void)setupTableView {
-    
-    
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.emptyDataSetSource = self;
-    self.tableView.emptyDataSetDelegate = self;
-    self.tableView.tableFooterView = [UIView new];
-    [self.view addSubview:self.tableView];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
-}
-
-- (void)setupNavigationBarAddButton {
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self  action:@selector(addCity:)];
-    
-    self.navigationItem.rightBarButtonItem = addButton;
-}
-
-- (void)setupUI {
-    [self setupTableView];
-    [self setupNavigationBarAddButton];
-}
-
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -53,6 +30,12 @@
     [self.presenter getCities];
     [self setupUI];
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+#pragma mark - IBAction
 
 -(IBAction)addCity:(id)sender{
     
@@ -77,9 +60,30 @@
     
     [self presentViewController:alertController animated:YES completion:nil];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - ui setup
+
+- (void)setupTableView {
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+    self.tableView.tableFooterView = [UIView new];
+    [self.view addSubview:self.tableView];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
+}
+
+- (void)setupNavigationBarAddButton {
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self  action:@selector(addCity:)];
+    
+    self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)setupUI {
+    [self setupTableView];
+    [self setupNavigationBarAddButton];
 }
 
 #pragma mark - Table view data source
@@ -88,7 +92,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.cities.count >0 ) {
         return self.cities.count;
-
+        
     }
     return 0;
 }
@@ -98,7 +102,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
     cell.textLabel.text = [[self.cities objectAtIndex:indexPath.row] name];
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.accessoryType = UITableViewCellAccessoryDetailButton;
     return cell;
 }
 
@@ -127,26 +131,20 @@
 
 - (void)tableView:(UITableView *)tableView
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    
-    
+    City *selectedCity = [self.cities objectAtIndex:indexPath.row];
+    CityHistoryTableViewController *cityHistoryTableViewController = [[CityHistoryTableViewController alloc] init];
+    cityHistoryTableViewController.city = selectedCity;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:cityHistoryTableViewController];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     City *selectedCity = [self.cities objectAtIndex:indexPath.row];
     WeatherDetailsViewController *weatherDetailsViewController = [[WeatherDetailsViewController alloc] init];
-    weatherDetailsViewController.cityName = selectedCity.name;
+    weatherDetailsViewController.city = selectedCity;
     [self.navigationController pushViewController:weatherDetailsViewController animated:YES];
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 #pragma mark - CitiesViewProtocol
 - (void)showCities:(NSArray<City *> *)cities {
@@ -154,26 +152,13 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     [self.tableView reloadData];
 }
 -(void)showAlertWithText:(NSString*) text{
-    [self showToastwith:text];
+    [self showAlertWithMessage:text];
     [self.presenter getCities];
-
+    
 }
 
 #pragma mark - DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
-//- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
-//{
-//    NSString *text = @"Please add new city";
-//
-//    NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
-//    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
-//    paragraph.alignment = NSTextAlignmentCenter;
-//
-//    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0f],
-//                                 NSForegroundColorAttributeName: [UIColor lightGrayColor],
-//                                 NSParagraphStyleAttributeName: paragraph};
-//
-//    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
-//}
+
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
 {

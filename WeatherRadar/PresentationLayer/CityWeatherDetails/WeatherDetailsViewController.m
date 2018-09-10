@@ -10,6 +10,8 @@
 #import "Constaints.h"
 #import "NSDate+ManipulateDate.h"
 #import "WeatherDetailsPresenter.h"
+#import "UIImageView+Download.h"
+
 @interface WeatherDetailsViewController ()
 
 @property (nonatomic, strong) UILabel *detailsLabel;
@@ -19,8 +21,6 @@
 @property (nonatomic, strong) UILabel *humidityLabel;
 @property (nonatomic, strong) UILabel *windSpeedLabel;
 @property (strong, nonatomic) id <WeatherDetailsPresenterProtocol> presenter;
-@property (nonatomic, strong) Weather *weather;
-
 
 @end
 
@@ -29,16 +29,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.presenter = [[WeatherDetailsPresenter alloc] initWithView:self];
-    [self.presenter getWeatherDetailsforCity:self.cityName];
-    self.view.backgroundColor = UIColor.whiteColor;
+    [self setupUI];
+    
+    if (self.weather == nil) {
+        self.presenter = [[WeatherDetailsPresenter alloc] initWithView:self];
+        [self.presenter getWeatherDetailsforCity:self.city];
+    }else{
+        [self showWeatherDetails:self.weather];
+    }
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - setup UI
+
+- (void)createUIComponents {
     self.detailsLabel = [[UILabel alloc] init];
     self.detailsLabel.numberOfLines = 0;
     
     self.descriptionLabel = [[UILabel alloc] init];
+    [self.descriptionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
+    
     self.tempretureLabel = [[UILabel alloc] init];
+    [self.tempretureLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
+    
     self.humidityLabel = [[UILabel alloc] init];
+    [self.humidityLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
+    
     self.windSpeedLabel = [[UILabel alloc] init];
+    [self.windSpeedLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
+    
+    self.weatherImageView = [[UIImageView alloc] init];
     
     [self.detailsLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.descriptionLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -46,17 +71,21 @@
     [self.humidityLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.detailsLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.windSpeedLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.weatherImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [self.view addSubview:self.detailsLabel];
     [self.view addSubview:self.descriptionLabel];
     [self.view addSubview:self.tempretureLabel];
     [self.view addSubview:self.humidityLabel];
     [self.view addSubview:self.windSpeedLabel];
-    
-    NSDictionary *views = NSDictionaryOfVariableBindings(_detailsLabel, _descriptionLabel,_tempretureLabel,_humidityLabel,_windSpeedLabel);
+    [self.view addSubview:self.weatherImageView];
+}
+
+- (void)setupConstraints {
+    NSDictionary *views = NSDictionaryOfVariableBindings(_detailsLabel, _descriptionLabel,_tempretureLabel,_humidityLabel,_windSpeedLabel,_weatherImageView);
     
     NSArray *detailsLabelhorizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_detailsLabel]-20-|" options:0 metrics:nil views:views];
-    NSArray *descriptionLabelhorizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_descriptionLabel]-20-|" options:0 metrics:nil views:views];
+    NSArray *descriptionLabelhorizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_weatherImageView(70)]-20-[_descriptionLabel]-20-|" options:NSLayoutFormatAlignAllCenterY metrics:nil views:views];
     
     NSArray *tempretureLabelhorizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_tempretureLabel]-20-|" options:0 metrics:nil views:views];
     
@@ -64,7 +93,7 @@
     
     NSArray *windSpeedLabelhorizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_windSpeedLabel]-20-|" options:0 metrics:nil views:views];
     
-    NSArray *verticalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[_detailsLabel]-20-[_descriptionLabel]-20-[_tempretureLabel]-20-[_humidityLabel]-20-[_windSpeedLabel]->=20-|"  options:0 metrics:nil views:views];
+    NSArray *verticalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[_detailsLabel]-20-[_weatherImageView(70)]-20-[_tempretureLabel]-20-[_humidityLabel]-20-[_windSpeedLabel]->=20-|"  options:0 metrics:nil views:views];
     
     
     [self.view addConstraints:detailsLabelhorizontalConstraints];
@@ -73,44 +102,43 @@
     [self.view addConstraints:humidityLabelhorizontalConstraints];
     [self.view addConstraints:windSpeedLabelhorizontalConstraints];
     [self.view addConstraints:verticalConstraints];
-    
-    //    NSLog(@"%@",[self.view constraints]);
-    
-    
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+- (void)setupUI {
+    
+    if (self.weather == nil) {
+        self.navigationItem.title = self.city.name;
+    }else{
+        self.navigationItem.title = self.weather.city;
+    }
+    self.view.backgroundColor = UIColor.whiteColor;
+    
+    [self createUIComponents];
+    
+    [self setupConstraints];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - WeatherDetailsViewProtocol
 
 - (void)showAlertWithText:(NSString *)text {
-    [self showToastwith:text];
+    [self showAlertWithMessage:text];
 }
 
 - (void)showWeatherDetails:(Weather *)weatherDetails {
     self.weather = weatherDetails;
-    self.detailsLabel.text = [NSString stringWithFormat:kDetailsString,self.cityName, [weatherDetails.date convertToString]];
-    self.descriptionLabel.text = weatherDetails.weatherDescription;
-    self.tempretureLabel.text = [NSString stringWithFormat:@"%.1f%@", weatherDetails.temp,@"\u00B0"];
-    self.humidityLabel.text = [NSString stringWithFormat:@"%.3f",weatherDetails.humidity];
-    self.windSpeedLabel.text =[NSString stringWithFormat:@"%.3f",weatherDetails.windSpeed];
-    [self.presenter saveWeatherInfo:weatherDetails andImage:nil];
-    
+    NSString *cityName = nil;
+    if (self.weather == nil) {
+        cityName = self.city.name;
+        
+    }else{
+        cityName = self.weather.city;
+    }
+    self.detailsLabel.text = [NSString stringWithFormat:kDetailsString,cityName, [weatherDetails.date convertToString]];
+    self.descriptionLabel.text = [NSString stringWithFormat:@"%@", weatherDetails.weatherDescription] ;
+    self.tempretureLabel.text = [NSString stringWithFormat:@"Tempreture: %d%@", (int)weatherDetails.temp,@"\u00B0"];
+    self.humidityLabel.text = [NSString stringWithFormat:@"Humidity: %d%%",(int)weatherDetails.humidity];
+    self.windSpeedLabel.text =[NSString stringWithFormat:@"Wind Speed: %.1f kmh",weatherDetails.windSpeed];
+    [self.weatherImageView setImageFromIcon:weatherDetails.icon];
 }
 
 

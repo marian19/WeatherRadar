@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) double windSpeed;
 @property (nullable, nonatomic, copy) NSDate *date;
 @property (nullable, nonatomic, copy) NSString *weatherDescription;
-@property (nullable, nonatomic, copy) NSData *icon;
+@property (nullable, nonatomic, copy) NSString *icon;
 @property (nonatomic) double humidity;
 @property (nullable, nonatomic, retain) City *city;
 

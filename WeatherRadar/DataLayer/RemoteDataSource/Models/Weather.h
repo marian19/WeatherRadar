@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WeatherInfo.h"
 
 @interface Weather : NSObject
 
@@ -18,5 +19,7 @@
 @property (nonatomic) double windSpeed;
 @property (nonatomic, strong) NSDate *date;
 
--(instancetype)initWithNSDictionary : (NSDictionary*)dictionary;
+-(instancetype)initWithNSDictionary: (NSDictionary*)dictionary;
+-(instancetype)initWithWeatherInfo: (WeatherInfo*)weatherInfo;
+
 @end

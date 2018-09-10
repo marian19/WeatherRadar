@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
--(void) showToastwith:(NSString*) text;
+
+-(void)showAlertWithMessage:(NSString*) text;
+
 @end

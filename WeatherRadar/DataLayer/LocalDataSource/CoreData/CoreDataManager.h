@@ -12,7 +12,7 @@
 
 - (void)saveContext;
 
-- (void) deleteAllCoreDataObjects;
+- (void)deleteAllCoreDataObjects;
 
 
 @end

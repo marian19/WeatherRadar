@@ -7,17 +7,16 @@
 //
 
 #import "BasePresenter.h"
-#import "Weather.h"
 #import "WeatherDetailsViewController.h"
-
+#import "City.h"
 @protocol WeatherDetailsPresenterProtocol <NSObject>
 
--(void) getWeatherDetailsforCity:(NSString*) cityName;
--(void) saveWeatherInfo:(Weather *)weather andImage:(UIImage*) image;
+- (void)getWeatherDetailsforCity:(City *)city;
 
 @end
 
 @interface WeatherDetailsPresenter : BasePresenter<WeatherDetailsPresenterProtocol>
+
 - (id)initWithView:(id < WeatherDetailsViewProtocol> ) view;
 @property (weak, nonatomic) id <WeatherDetailsViewProtocol> view;
 

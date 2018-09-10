@@ -12,3 +12,4 @@
 "ErrorMessage" = "Somthing went wrong, please try again";
 "WeatherSaved" = "Weather is saved successfully";
 "WrongCityName" = "Can't find any weather info for this city, Please Make sure you've typed the city name correctly and try again";
+"NoHistory" = "There is no history for this city";

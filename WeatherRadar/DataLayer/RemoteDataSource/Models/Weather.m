@@ -7,6 +7,7 @@
 //
 
 #import "Weather.h"
+#import "City.h"
 
 @implementation Weather
 
@@ -27,6 +28,21 @@
         self.date = [NSDate date];
     }
     
+    return self;
+}
+
+-(instancetype)initWithWeatherInfo: (WeatherInfo*)weatherInfo{
+    
+    self = [super init];
+    if (self) {
+        self.city = weatherInfo.city.name;
+        self.weatherDescription = weatherInfo.weatherDescription;
+        self.icon = weatherInfo.icon;
+        self.temp = weatherInfo.temp;
+        self.humidity = weatherInfo.humidity;
+        self.windSpeed = weatherInfo.windSpeed;
+        self.date = weatherInfo.date;
+    }
     return self;
 }
 @end

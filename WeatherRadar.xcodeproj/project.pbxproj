@@ -31,6 +31,8 @@
 		56C0D9BF2144742E0085B709 /* BasePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D9BE2144742E0085B709 /* BasePresenter.m */; };
 		56C0D9C2214474460085B709 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D9C1214474460085B709 /* BaseViewController.m */; };
 		56C0D9C5214477850085B709 /* CitiesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D9C4214477850085B709 /* CitiesPresenter.m */; };
+		56D4E97B214706D6006FA31A /* CityHistoryPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D4E979214706D6006FA31A /* CityHistoryPresenter.m */; };
+		56D4E97C214706D6006FA31A /* CityHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D4E97A214706D6006FA31A /* CityHistoryTableViewController.m */; };
 		56E43C49214661DA009231FE /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E43C48214661DA009231FE /* UIImageView+Download.m */; };
 		C5339A5EC44468F3AAC91111 /* libPods-WeatherRadar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC527D9F1E5D67A918089184 /* libPods-WeatherRadar.a */; };
 /* End PBXBuildFile section */
@@ -90,6 +92,10 @@
 		56C0D9C1214474460085B709 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		56C0D9C3214477850085B709 /* CitiesPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesPresenter.h; sourceTree = "<group>"; };
 		56C0D9C4214477850085B709 /* CitiesPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesPresenter.m; sourceTree = "<group>"; };
+		56D4E977214706D6006FA31A /* CityHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityHistoryTableViewController.h; sourceTree = "<group>"; };
+		56D4E978214706D6006FA31A /* CityHistoryPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityHistoryPresenter.h; sourceTree = "<group>"; };
+		56D4E979214706D6006FA31A /* CityHistoryPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityHistoryPresenter.m; sourceTree = "<group>"; };
+		56D4E97A214706D6006FA31A /* CityHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityHistoryTableViewController.m; sourceTree = "<group>"; };
 		56E43C47214661DA009231FE /* UIImageView+Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
 		56E43C48214661DA009231FE /* UIImageView+Download.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
 		5B0D05780F6D4B99762076C6 /* Pods-WeatherRadarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherRadarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherRadarTests/Pods-WeatherRadarTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -285,6 +291,10 @@
 		569A5BF42145052A00DCCFB2 /* CityWeatherHistory */ = {
 			isa = PBXGroup;
 			children = (
+				56D4E978214706D6006FA31A /* CityHistoryPresenter.h */,
+				56D4E979214706D6006FA31A /* CityHistoryPresenter.m */,
+				56D4E977214706D6006FA31A /* CityHistoryTableViewController.h */,
+				56D4E97A214706D6006FA31A /* CityHistoryTableViewController.m */,
 			);
 			path = CityWeatherHistory;
 			sourceTree = "<group>";
@@ -490,11 +500,13 @@
 				56C0D9C5214477850085B709 /* CitiesPresenter.m in Sources */,
 				5614CE6A2145BA7A00119E4D /* WeatherDetailsPresenter.m in Sources */,
 				5614CE6E2145C5B300119E4D /* NSDate+ManipulateDate.m in Sources */,
+				56D4E97B214706D6006FA31A /* CityHistoryPresenter.m in Sources */,
 				56C0D99C2143F5900085B709 /* Weather.m in Sources */,
 				56C0D99F214446280085B709 /* WeatherRemoteDataSource.m in Sources */,
 				5682D40521428F88000BAA5D /* WeatherRadar.xcdatamodeld in Sources */,
 				5682D40D21428F8A000BAA5D /* main.m in Sources */,
 				5682D42C2142962A000BAA5D /* CitiesTableViewController.m in Sources */,
+				56D4E97C214706D6006FA31A /* CityHistoryTableViewController.m in Sources */,
 				5682D3FC21428F88000BAA5D /* AppDelegate.m in Sources */,
 				56C0D9A321445B990085B709 /* CoreDataManager.m in Sources */,
 				56E43C49214661DA009231FE /* UIImageView+Download.m in Sources */,
