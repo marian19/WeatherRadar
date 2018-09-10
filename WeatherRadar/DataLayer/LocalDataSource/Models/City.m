@@ -64,7 +64,7 @@
     NSManagedObjectContext *managedObjectContext = CoreDataManager.sharedInstance.managedObjectContext;
     NSError *error = nil;
     NSArray *results = [managedObjectContext executeFetchRequest:[City fetchRequest] error:&error];
-
+    
     return results;
     
     

@@ -33,7 +33,7 @@ AFNetworkingClient *httpClient;
             completion(weather,nil);
         }else{
             completion(nil,error);
-
+            
         }
     }];
 }
