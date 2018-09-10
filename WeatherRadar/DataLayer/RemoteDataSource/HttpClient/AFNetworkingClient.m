@@ -8,7 +8,6 @@
 
 #import "AFNetworkingClient.h"
 #import "AFNetworking.h"
-#import "AFImageDownloader.h"
 #import "Constaints.h"
 
 @implementation AFNetworkingClient
@@ -41,7 +40,7 @@
     }];
 }
 
-- (void) downloadImage:(NSString*)icon completion:(void (^)(id  _Nullable, NSError * _Nullable))completion{
+- (void) downloadImage:(NSString*)icon completion:(void (^)(UIImage *  _Nullable, NSError * _Nullable))completion{
     
     NSString* fullURLString = [NSString stringWithFormat:kIconsBaseURL,icon];
 

@@ -31,6 +31,7 @@
 		56C0D9BF2144742E0085B709 /* BasePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D9BE2144742E0085B709 /* BasePresenter.m */; };
 		56C0D9C2214474460085B709 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D9C1214474460085B709 /* BaseViewController.m */; };
 		56C0D9C5214477850085B709 /* CitiesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D9C4214477850085B709 /* CitiesPresenter.m */; };
+		56E43C49214661DA009231FE /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E43C48214661DA009231FE /* UIImageView+Download.m */; };
 		C5339A5EC44468F3AAC91111 /* libPods-WeatherRadar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC527D9F1E5D67A918089184 /* libPods-WeatherRadar.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		56C0D9C1214474460085B709 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		56C0D9C3214477850085B709 /* CitiesPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesPresenter.h; sourceTree = "<group>"; };
 		56C0D9C4214477850085B709 /* CitiesPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesPresenter.m; sourceTree = "<group>"; };
+		56E43C47214661DA009231FE /* UIImageView+Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
+		56E43C48214661DA009231FE /* UIImageView+Download.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
 		5B0D05780F6D4B99762076C6 /* Pods-WeatherRadarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherRadarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherRadarTests/Pods-WeatherRadarTests.release.xcconfig"; sourceTree = "<group>"; };
 		88CFA5E9F17F19EFB3A19031 /* libPods-WeatherRadarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherRadarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FE6207304B4EAE430565C1 /* Pods-WeatherRadarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherRadarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherRadarTests/Pods-WeatherRadarTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			children = (
 				5614CE6C2145C5B300119E4D /* NSDate+ManipulateDate.h */,
 				5614CE6D2145C5B300119E4D /* NSDate+ManipulateDate.m */,
+				56E43C47214661DA009231FE /* UIImageView+Download.h */,
+				56E43C48214661DA009231FE /* UIImageView+Download.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				5682D42C2142962A000BAA5D /* CitiesTableViewController.m in Sources */,
 				5682D3FC21428F88000BAA5D /* AppDelegate.m in Sources */,
 				56C0D9A321445B990085B709 /* CoreDataManager.m in Sources */,
+				56E43C49214661DA009231FE /* UIImageView+Download.m in Sources */,
 				56C0D9BF2144742E0085B709 /* BasePresenter.m in Sources */,
 				56C0D9BA21445DD50085B709 /* WeatherInfo.m in Sources */,
 				56C0D9BC21445DD50085B709 /* City.m in Sources */,

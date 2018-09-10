@@ -31,7 +31,7 @@
                 if (error == nil){
                     [self.view showWeatherDetails:weather];
                 }else{
-                    [self.view showAlertWithText:@"ErrorMessage"];
+                    [self.view showAlertWithText:@"WrongCityName"];
                 }
             });
         }];

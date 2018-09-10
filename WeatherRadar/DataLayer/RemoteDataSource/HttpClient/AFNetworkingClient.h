@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFImageDownloader.h"
 
 @interface AFNetworkingClient : NSObject
 + (instancetype)sharedInstance;
 
 - (void) GET:(NSString*)URLString withParameters:(NSDictionary*)parameter completion:(void (^)(id _Nullable, NSError * _Nonnull))completion;
 
-- (void) downloadImage:(NSString*)icon completion:(void (^)(id  _Nullable, NSError * _Nullable))completion;
+- (void) downloadImage:(NSString*)icon completion:(void (^)(UIImage *  _Nullable, NSError * _Nullable))completion;
 @end

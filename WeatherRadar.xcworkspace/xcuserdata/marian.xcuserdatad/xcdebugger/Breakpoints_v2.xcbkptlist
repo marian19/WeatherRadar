@@ -9,6 +9,22 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "WeatherRadar/DataLayer/RemoteDataSource/WeatherRemoteDataSource.m"
+            timestampString = "558134669.246022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-getWeatherAt:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "WeatherRadar/DataLayer/RemoteDataSource/HttpClient/AFNetworkingClient.m"
             timestampString = "558134669.246588"
             startingColumnNumber = "9223372036854775807"
@@ -42,7 +58,7 @@
                   moduleName = "WeatherRadar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marian/WeatherRadar/WeatherRadar/DataLayer/RemoteDataSource/HttpClient/AFNetworkingClient.m"
-                  timestampString = "558222050.482285"
+                  timestampString = "558182846.820487"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -57,7 +73,7 @@
                   moduleName = "WeatherRadar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marian/WeatherRadar/WeatherRadar/DataLayer/RemoteDataSource/HttpClient/AFNetworkingClient.m"
-                  timestampString = "558222050.4840159"
+                  timestampString = "558182846.822329"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -68,11 +84,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.16"
+                  symbolName = "__destroy_helper_block_.14"
                   moduleName = "WeatherRadar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marian/WeatherRadar/WeatherRadar/DataLayer/RemoteDataSource/HttpClient/AFNetworkingClient.m"
-                  timestampString = "558222050.4857171"
+                  timestampString = "558182846.824071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -120,13 +136,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherRadar/DataLayer/LocalDataSource/Models/City.m"
-            timestampString = "558215728.941291"
+            filePath = "WeatherRadar/PresentationLayer/CitiesTableView/CitiesPresenter.m"
+            timestampString = "558183163.464308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "+addCity:"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-getCities"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -136,13 +152,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherRadar/DataLayer/LocalDataSource/Models/City.m"
-            timestampString = "558215732.197368"
+            filePath = "WeatherRadar/PresentationLayer/CitiesTableView/CitiesTableViewController.m"
+            timestampString = "558183163.46438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "+addCity:"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "-showAlertWithText:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -153,7 +169,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherRadar/PresentationLayer/CitiesTableView/CitiesPresenter.m"
-            timestampString = "558221953.731481"
+            timestampString = "558183163.464687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -169,76 +185,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherRadar/PresentationLayer/CitiesTableView/CitiesPresenter.m"
-            timestampString = "558221953.731609"
+            timestampString = "558183163.464736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-addCity:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherRadar/PresentationLayer/CitiesTableView/CitiesPresenter.m"
-            timestampString = "558221953.73171"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-addCity:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__27-[CitiesPresenter addCity:]_block_invoke_2"
-                  moduleName = "WeatherRadar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marian/WeatherRadar/WeatherRadar/PresentationLayer/CitiesTableView/CitiesPresenter.m"
-                  timestampString = "558222050.5150909"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "206">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.26"
-                  moduleName = "WeatherRadar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marian/WeatherRadar/WeatherRadar/PresentationLayer/CitiesTableView/CitiesPresenter.m"
-                  timestampString = "558222050.517028"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherRadar/DataLayer/RemoteDataSource/WeatherRemoteDataSource.m"
-            timestampString = "558222049.051452"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-getWeatherAt:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
