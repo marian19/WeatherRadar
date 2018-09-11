@@ -13,4 +13,5 @@
 "WeatherSaved" = "Weather is saved successfully";
 "WrongCityName" = "Can't find any weather info for this city, Please Make sure you've typed the city name correctly and try again";
 "NoHistory" = "There is no history for this city";
-"CheckConnection" = "Check internet connection and try again";
+"CheckConnection" = "Please check your internet connection and try again";
+"WrongAPI" = "The API key passed was not valid or has expired";

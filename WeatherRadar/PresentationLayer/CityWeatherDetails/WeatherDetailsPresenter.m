@@ -12,6 +12,7 @@
 #import "SVProgressHUD.h"
 #import "Weather.h"
 #import "Reachability.h"
+#import "ErrorHandlingLayer.h"
 
 @implementation WeatherDetailsPresenter
 
@@ -26,8 +27,8 @@
 - (void)getWeatherDetailsforCity:(City *)city {
     
     if ([[Reachability reachabilityForInternetConnection]currentReachabilityStatus]==NotReachable){
-        [self.view showAlertWithText:@"CheckConnection"];
         
+        [ErrorHandlingLayer handleErrorCode:INTERNET_CONNECTION];
         
     }else{
         [SVProgressHUD show];
@@ -36,13 +37,11 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [SVProgressHUD dismiss];
                     
-                    if (error == nil){
+                    if (weather != nil){
                         
                         [self saveWeatherInfoToCoreData:weather forCity: city];
                         
                         [self.view showWeatherDetails:weather];
-                    }else{
-                        [self.view showAlertWithText:@"WrongCityName"];
                     }
                 });
             }];
@@ -60,7 +59,7 @@
             [SVProgressHUD dismiss];
             
             if (weatherInfo == nil) {
-                [self.view showAlertWithText:@"ErrorMessage"];
+                [ErrorHandlingLayer handleErrorCode:SAVE_ERROR];
             }
         });
     });

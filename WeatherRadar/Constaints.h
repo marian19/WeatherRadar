@@ -15,7 +15,6 @@ static NSString *const kBaseURL = @"http://api.openweathermap.org/data/2.5/%@&un
 static NSString *const kIconsBaseURL = @"http://openweathermap.org/img/w/%@.png";
 static NSString *const kCityWeather = @"weather?q=%@";
 static NSString *const kDetailsString = @"Weather information for %@ recieved on %@";
-
 static NSString *const kFolderName = @"WeatherRadar";
 
 

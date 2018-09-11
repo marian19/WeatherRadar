@@ -9,6 +9,7 @@
 #import "AFNetworkingClient.h"
 #import "AFNetworking.h"
 #import "Constaints.h"
+#import "ErrorHandlingLayer.h"
 
 @implementation AFNetworkingClient
 
@@ -38,6 +39,14 @@
         [manager invalidateSessionCancelingTasks:YES];
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
+        
+        NSInteger statusCode = 0;
+
+        if ([operation.response isKindOfClass:[NSHTTPURLResponse class]]) {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)operation.response;
+            statusCode = httpResponse.statusCode;
+            [ErrorHandlingLayer handleErrorCode:statusCode];
+        }
         completion(nil, error);
         [manager invalidateSessionCancelingTasks:YES];
         

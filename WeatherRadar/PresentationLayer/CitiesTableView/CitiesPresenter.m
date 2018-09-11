@@ -9,6 +9,8 @@
 #import "CitiesPresenter.h"
 #import "City.h"
 #import "SVProgressHUD.h"
+#import "ErrorHandlingLayer.h"
+
 @implementation CitiesPresenter
 
 - (id)initWithView:(id < CitiesViewProtocol> ) view {
@@ -45,9 +47,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [SVProgressHUD dismiss];
             
-            if (isNewCity) {
-                [self.view showAlertWithText:@"CityAdded"];
-            }else{
+            if (!isNewCity) {
+                [ErrorHandlingLayer handleErrorCode:DUPLICATE_CITY_ERROR];
+
                 [self.view showAlertWithText:@"CityIsExist"];
             }
         });

@@ -22,6 +22,7 @@
 		569A5BF72145168A00DCCFB2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 569A5BF62145168A00DCCFB2 /* Localizable.strings */; };
 		569BA0D22147AE2B00C1A4A6 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BA0D12147AE2B00C1A4A6 /* HistoryTableViewCell.m */; };
 		569BA0D52147AFDD00C1A4A6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BA0D42147AFDD00C1A4A6 /* Reachability.m */; };
+		569BA0D82147B12500C1A4A6 /* ErrorHandlingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BA0D62147B12500C1A4A6 /* ErrorHandlingLayer.m */; };
 		56C0D9972143D7C30085B709 /* AFNetworkingClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D9962143D7C30085B709 /* AFNetworkingClientTests.m */; };
 		56C0D99C2143F5900085B709 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D99B2143F5900085B709 /* Weather.m */; };
 		56C0D99F214446280085B709 /* WeatherRemoteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D99E214446280085B709 /* WeatherRemoteDataSource.m */; };
@@ -76,6 +77,8 @@
 		569BA0D12147AE2B00C1A4A6 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
 		569BA0D32147AFDD00C1A4A6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		569BA0D42147AFDD00C1A4A6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		569BA0D62147B12500C1A4A6 /* ErrorHandlingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandlingLayer.m; sourceTree = "<group>"; };
+		569BA0D72147B12500C1A4A6 /* ErrorHandlingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorHandlingLayer.h; sourceTree = "<group>"; };
 		56C0D9962143D7C30085B709 /* AFNetworkingClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingClientTests.m; sourceTree = "<group>"; };
 		56C0D9982143E5BA0085B709 /* Constaints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constaints.h; sourceTree = "<group>"; };
 		56C0D99A2143F5900085B709 /* Weather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 			children = (
 				5682D3FA21428F88000BAA5D /* AppDelegate.h */,
 				5682D3FB21428F88000BAA5D /* AppDelegate.m */,
+				56C0D9982143E5BA0085B709 /* Constaints.h */,
 				5682D423214294A8000BAA5D /* PresentationLayer */,
 				5682D424214294B4000BAA5D /* DataLayer */,
 				5682D42121429476000BAA5D /* supporting files */,
@@ -237,6 +241,7 @@
 		5682D424214294B4000BAA5D /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				569BA0D92147B67C00C1A4A6 /* ErrorHandling */,
 				5682D429214295C5000BAA5D /* RemoteDataSource */,
 				5682D428214295BB000BAA5D /* LocalDataSource */,
 			);
@@ -277,13 +282,12 @@
 		5682D429214295C5000BAA5D /* RemoteDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				569BA0D32147AFDD00C1A4A6 /* Reachability.h */,
+				569BA0D42147AFDD00C1A4A6 /* Reachability.m */,
 				56C0D99D214446280085B709 /* WeatherRemoteDataSource.h */,
 				56C0D99E214446280085B709 /* WeatherRemoteDataSource.m */,
 				56C0D9992143F5740085B709 /* Models */,
 				5682D4302143329C000BAA5D /* HttpClient */,
-				56C0D9982143E5BA0085B709 /* Constaints.h */,
-				569BA0D32147AFDD00C1A4A6 /* Reachability.h */,
-				569BA0D42147AFDD00C1A4A6 /* Reachability.m */,
 			);
 			path = RemoteDataSource;
 			sourceTree = "<group>";
@@ -315,6 +319,15 @@
 				569BA0D12147AE2B00C1A4A6 /* HistoryTableViewCell.m */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		569BA0D92147B67C00C1A4A6 /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				569BA0D72147B12500C1A4A6 /* ErrorHandlingLayer.h */,
+				569BA0D62147B12500C1A4A6 /* ErrorHandlingLayer.m */,
+			);
+			path = ErrorHandling;
 			sourceTree = "<group>";
 		};
 		56C0D9992143F5740085B709 /* Models */ = {
@@ -529,6 +542,7 @@
 				5682D3FC21428F88000BAA5D /* AppDelegate.m in Sources */,
 				569BA0D22147AE2B00C1A4A6 /* HistoryTableViewCell.m in Sources */,
 				56C0D9A321445B990085B709 /* CoreDataManager.m in Sources */,
+				569BA0D82147B12500C1A4A6 /* ErrorHandlingLayer.m in Sources */,
 				56E43C49214661DA009231FE /* UIImageView+Download.m in Sources */,
 				56C0D9BF2144742E0085B709 /* BasePresenter.m in Sources */,
 				56C0D9BA21445DD50085B709 /* WeatherInfo.m in Sources */,
