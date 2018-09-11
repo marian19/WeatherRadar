@@ -49,8 +49,8 @@
             
             if (!isNewCity) {
                 [ErrorHandlingLayer handleErrorCode:DUPLICATE_CITY_ERROR];
-
-                [self.view showAlertWithText:@"CityIsExist"];
+            }else{
+                [self getCities];
             }
         });
     });

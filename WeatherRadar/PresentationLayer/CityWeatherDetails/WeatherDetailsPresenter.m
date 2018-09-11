@@ -31,6 +31,7 @@
         [ErrorHandlingLayer handleErrorCode:INTERNET_CONNECTION];
         
     }else{
+        
         [SVProgressHUD show];
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
             [[[WeatherRemoteDataSource alloc] init] getWeatherAt:city.name completion:^(Weather * weather, NSError * error) {

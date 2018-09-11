@@ -1,11 +1,3 @@
-//
-//  ErrorHandlingLayer.m
-//  SearchManger.m
-//
-//  Created by Marian on 12/7/16.
-//  Copyright © 2016 Marian. All rights reserved.
-//
-
 
 #import "ErrorHandlingLayer.h"
 
@@ -47,20 +39,16 @@ static const NSInteger INVALID_CITY_NAME = 404;
 }
 
 
-+(void)handleErrorWithMessage:(NSString*)message
-{
++(void)handleErrorWithMessage:(NSString*)message{
     
     errorMessageAlertView = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(message,nil) preferredStyle:UIAlertControllerStyleAlert];
+    
     [errorMessageAlertView addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleCancel handler:nil]];
     
     UIWindow *keyWindow = [[UIApplication sharedApplication]keyWindow];
     UIViewController *mainController = [keyWindow rootViewController];
     [mainController presentViewController:errorMessageAlertView animated:YES completion:nil];
     
-    
 }
-
-
-
 
 @end
