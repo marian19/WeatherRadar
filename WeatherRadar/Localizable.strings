@@ -5,7 +5,7 @@
   Created by Marian on 9/9/18.
   Copyright © 2018 Marian. All rights reserved.
 */
-"EmptyCitiesTable" = "No cities Found,Please add new city";
+"EmptyCitiesTable" = "No cities Found, Please add new city";
 "CityAdded" = "City is added successfully";
 "OK" = "OK";
 "CityIsExist" = "City is already exist";
