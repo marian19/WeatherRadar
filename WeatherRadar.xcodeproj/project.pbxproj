@@ -20,6 +20,8 @@
 		5682D42F21430916000BAA5D /* WeatherDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D42E21430916000BAA5D /* WeatherDetailsViewController.m */; };
 		5682D433214332C7000BAA5D /* AFNetworkingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682D432214332C7000BAA5D /* AFNetworkingClient.m */; };
 		569A5BF72145168A00DCCFB2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 569A5BF62145168A00DCCFB2 /* Localizable.strings */; };
+		569BA0D22147AE2B00C1A4A6 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BA0D12147AE2B00C1A4A6 /* HistoryTableViewCell.m */; };
+		569BA0D52147AFDD00C1A4A6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 569BA0D42147AFDD00C1A4A6 /* Reachability.m */; };
 		56C0D9972143D7C30085B709 /* AFNetworkingClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D9962143D7C30085B709 /* AFNetworkingClientTests.m */; };
 		56C0D99C2143F5900085B709 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D99B2143F5900085B709 /* Weather.m */; };
 		56C0D99F214446280085B709 /* WeatherRemoteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0D99E214446280085B709 /* WeatherRemoteDataSource.m */; };
@@ -70,6 +72,10 @@
 		5682D431214332C7000BAA5D /* AFNetworkingClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworkingClient.h; sourceTree = "<group>"; };
 		5682D432214332C7000BAA5D /* AFNetworkingClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingClient.m; sourceTree = "<group>"; };
 		569A5BF62145168A00DCCFB2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		569BA0D02147AE2B00C1A4A6 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
+		569BA0D12147AE2B00C1A4A6 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
+		569BA0D32147AFDD00C1A4A6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		569BA0D42147AFDD00C1A4A6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		56C0D9962143D7C30085B709 /* AFNetworkingClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingClientTests.m; sourceTree = "<group>"; };
 		56C0D9982143E5BA0085B709 /* Constaints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constaints.h; sourceTree = "<group>"; };
 		56C0D99A2143F5900085B709 /* Weather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 		5682D423214294A8000BAA5D /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				569BA0CF2147AE1000C1A4A6 /* CustomViews */,
 				5614CE6B2145C4B100119E4D /* Categories */,
 				56C0D9BD2144742E0085B709 /* BasePresenter.h */,
 				56C0D9BE2144742E0085B709 /* BasePresenter.m */,
@@ -275,6 +282,8 @@
 				56C0D9992143F5740085B709 /* Models */,
 				5682D4302143329C000BAA5D /* HttpClient */,
 				56C0D9982143E5BA0085B709 /* Constaints.h */,
+				569BA0D32147AFDD00C1A4A6 /* Reachability.h */,
+				569BA0D42147AFDD00C1A4A6 /* Reachability.m */,
 			);
 			path = RemoteDataSource;
 			sourceTree = "<group>";
@@ -297,6 +306,15 @@
 				56D4E97A214706D6006FA31A /* CityHistoryTableViewController.m */,
 			);
 			path = CityWeatherHistory;
+			sourceTree = "<group>";
+		};
+		569BA0CF2147AE1000C1A4A6 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				569BA0D02147AE2B00C1A4A6 /* HistoryTableViewCell.h */,
+				569BA0D12147AE2B00C1A4A6 /* HistoryTableViewCell.m */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		56C0D9992143F5740085B709 /* Models */ = {
@@ -502,12 +520,14 @@
 				5614CE6E2145C5B300119E4D /* NSDate+ManipulateDate.m in Sources */,
 				56D4E97B214706D6006FA31A /* CityHistoryPresenter.m in Sources */,
 				56C0D99C2143F5900085B709 /* Weather.m in Sources */,
+				569BA0D52147AFDD00C1A4A6 /* Reachability.m in Sources */,
 				56C0D99F214446280085B709 /* WeatherRemoteDataSource.m in Sources */,
 				5682D40521428F88000BAA5D /* WeatherRadar.xcdatamodeld in Sources */,
 				5682D40D21428F8A000BAA5D /* main.m in Sources */,
 				5682D42C2142962A000BAA5D /* CitiesTableViewController.m in Sources */,
 				56D4E97C214706D6006FA31A /* CityHistoryTableViewController.m in Sources */,
 				5682D3FC21428F88000BAA5D /* AppDelegate.m in Sources */,
+				569BA0D22147AE2B00C1A4A6 /* HistoryTableViewCell.m in Sources */,
 				56C0D9A321445B990085B709 /* CoreDataManager.m in Sources */,
 				56E43C49214661DA009231FE /* UIImageView+Download.m in Sources */,
 				56C0D9BF2144742E0085B709 /* BasePresenter.m in Sources */,

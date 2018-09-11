@@ -12,6 +12,7 @@
 #import "CityHistoryPresenter.h"
 #import "WeatherDetailsViewController.h"
 #import "NSDate+ManipulateDate.h"
+#import "HistoryTableViewCell.h"
 
 @interface CityHistoryTableViewController ()<UITableViewDataSource, UITableViewDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
@@ -49,7 +50,7 @@
     self.tableView.emptyDataSetDelegate = self;
     self.tableView.tableFooterView = [UIView new];
     [self.view addSubview:self.tableView];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
+        [self.tableView registerClass:[HistoryTableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
 }
 
 - (void)setupNavigationBarDoneButton {
@@ -83,9 +84,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
-    cell.textLabel.text = [[[self.weatherInfoArray objectAtIndex:indexPath.row] date] convertToString];
+    WeatherInfo *weatherInfo = [self.weatherInfoArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[weatherInfo date] convertToString];
+    NSString *weatherString= [NSString stringWithFormat:@"%@, %@",weatherInfo.weatherDescription,[NSString stringWithFormat:@"Tempreture: %d%@", (int)weatherInfo.temp,@"\u00B0"]];
+    cell.detailTextLabel.text = weatherString;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
@@ -97,6 +103,11 @@
     WeatherDetailsViewController *weatherDetailsViewController = [[WeatherDetailsViewController alloc] init];
     weatherDetailsViewController.weather = [[Weather alloc] initWithWeatherInfo:selectedWeather];
     [self.navigationController pushViewController:weatherDetailsViewController animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 60;
 }
 
 #pragma mark - CityHistoryViewProtocol
