@@ -90,7 +90,7 @@
     
     WeatherInfo *weatherInfo = [self.weatherInfoArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [[weatherInfo date] convertToString];
-    NSString *weatherString= [NSString stringWithFormat:@"%@, %@",weatherInfo.weatherDescription,[NSString stringWithFormat:@"Tempreture: %d%@", (int)weatherInfo.temp,@"\u00B0"]];
+    NSString *weatherString= [NSString stringWithFormat:@"%@, %@",weatherInfo.weatherDescription,[NSString stringWithFormat:@"%d%@", (int)weatherInfo.temp,@"\u00B0"]];
     cell.detailTextLabel.text = weatherString;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
